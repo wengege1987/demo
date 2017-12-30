@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet"/>;
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		ul li{
+			float: left;
+			width: 25px;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			border:1px solid #ddd;
+		}
+		ul li.next{
+			width: 125px;
+		}
+		.present{
+			background:orange;
+		    color:white;
+		}
+	</style>
+</head>
+<body>
+
+<div class="feedback"></div>
+<script type="text/javascript">
+	setPage("alluser.php?page=1");
+	function setPage(url){
+		var feedback=docment.querySelect(".feedback");
+		
+		var xhr=new XMLHttpRequest();
+
+
+	}
+	/*var xhr=new XMLHttpRequest();
+	var feedback=document.querySelector(".feedback");
+	xhr.open("post","alluser.php");
+	xhr.send(null);
+	xhr.addEventListener("readystatechange",function(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				var str="<table border='1' width='95%' align='center'>";
+				str+="<tr><td>用户名</td><td>头像</td><td>注册时间</td></tr>";
+				console.log(JSON.parse(xhr.responseText));
+				let data=JSON.parse(xhr.responseText);
+				//data是一个数组
+				for (i in data[0]) { 
+					//console.log(data[i].username);
+					str+="<tr>";
+					str+="<td>"+data[0][i].username+"</td>";
+					str+="<td>"+data[0][i].icon+"</td>";
+					str+="<td>"+data[0][i].regTime+"</td>";
+					str+="</tr>";
+				}
+				//会员数据
+				str+="</table>";
+				//分页信息
+				str+=data[1];
+				feedback.innerHTML=str;
+			}
+		}
+	})*/
+</script>
+</body>
+</html>
